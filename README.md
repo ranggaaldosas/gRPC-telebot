@@ -47,3 +47,7 @@ pip install grpcio grpcio-tools google-auth google-auth-oauthlib google-auth-htt
 
 ## Documentation 
 
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/LpTTFx8/Screenshot-34.png)
+![App Screenshot](https://i.ibb.co/0nxqb1G/Screenshot-35.png)
