@@ -2,7 +2,7 @@
 
 
 ## Description
-Sebuah project aplikasi todo list  menggunakan gRPC API dan protobuf untuk melakukan komunikasi antara client dan server, serta bot telegram sebagai interface untuk berkomunikasi dengan user. Aplikasi ini memungkinkan user untuk menambahkan, membaca, mengubah, dan menghapus todo list dengan mudah dan efisien melalui bot telegram. Aplikasi ini menggunakan database Firebase sebagai media penyimpanan data, yang membuat todo list dapat diakses dan disimpan dengan mudah dan aman. Dengan aplikasi todo list ini, user dapat mengelola todo list dengan lebih mudah, cepat, dan efisien, sehingga dapat meningkatkan produktivitas dan efektivitas dalam menyelesaikan tugas-tugas yang perlu dilakukan.
+Sebuah project aplikasi todo list  menggunakan gRPC API dan protobuf untuk melakukan komunikasi antara client dan server, serta bot telegram sebagai interface untuk berkomunikasi dengan user. Aplikasi ini memungkinkan user untuk menambahkan, membaca, mengubah, dan menghapus todo list dengan mudah dan efisien melalui bot telegram. Aplikasi ini menggunakan database Firebase sebagai media penyimpanan data nya.
 
 ## Workflow
 - Membuat protokol dengan menggunakan protobuf (**todo.proto**) untuk mendefinisikan struktur dan format pesan yang akan dikirimkan antara client dan server
