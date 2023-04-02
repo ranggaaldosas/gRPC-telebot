@@ -5,9 +5,8 @@ import telegram
 from telegram.ext import CommandHandler, Updater, PicklePersistence
 
 # Inisialisasi bot telegram
-bot = telegram.Bot(token='6116776439:AAFsxLB9FF_GMDWNAq3OGx6Qi1cjE3U6SrA')
-updater = Updater(token='6116776439:AAFsxLB9FF_GMDWNAq3OGx6Qi1cjE3U6SrA',
-                  use_context=True)
+bot = telegram.Bot(token='YOUR_TELEBOT_TOKEN')
+updater = Updater(token='YOUR_TELEBOT_TOKEN', use_context=True)
 dispatcher = updater.dispatcher
 
 import grpc
