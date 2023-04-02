@@ -34,6 +34,11 @@ class TodoServiceStub(object):
                 request_serializer=todo__pb2.DeleteRequest.SerializeToString,
                 response_deserializer=todo__pb2.DeleteResponse.FromString,
                 )
+        self.List = channel.unary_unary(
+                '/todo.TodoService/List',
+                request_serializer=todo__pb2.ListRequest.SerializeToString,
+                response_deserializer=todo__pb2.ListResponse.FromString,
+                )
 
 
 class TodoServiceServicer(object):
@@ -63,6 +68,12 @@ class TodoServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TodoServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -85,6 +96,11 @@ def add_TodoServiceServicer_to_server(servicer, server):
                     servicer.Delete,
                     request_deserializer=todo__pb2.DeleteRequest.FromString,
                     response_serializer=todo__pb2.DeleteResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=todo__pb2.ListRequest.FromString,
+                    response_serializer=todo__pb2.ListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -161,5 +177,22 @@ class TodoService(object):
         return grpc.experimental.unary_unary(request, target, '/todo.TodoService/Delete',
             todo__pb2.DeleteRequest.SerializeToString,
             todo__pb2.DeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/todo.TodoService/List',
+            todo__pb2.ListRequest.SerializeToString,
+            todo__pb2.ListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

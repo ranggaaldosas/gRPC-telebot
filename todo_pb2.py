@@ -13,29 +13,37 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ntodo.proto\x12\x04todo\"\x1e\n\rCreateRequest\x12\r\n\x05title\x18\x01 \x01(\t\"!\n\x0e\x43reateResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x19\n\x0bReadRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1d\n\x0cReadResponse\x12\r\n\x05title\x18\x01 \x01(\t\"*\n\rUpdateRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\"!\n\x0eUpdateResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1b\n\rDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\t\"!\n\x0e\x44\x65leteResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xe3\x01\n\x0bTodoService\x12\x35\n\x06\x43reate\x12\x13.todo.CreateRequest\x1a\x14.todo.CreateResponse\"\x00\x12/\n\x04Read\x12\x11.todo.ReadRequest\x1a\x12.todo.ReadResponse\"\x00\x12\x35\n\x06Update\x12\x13.todo.UpdateRequest\x1a\x14.todo.UpdateResponse\"\x00\x12\x35\n\x06\x44\x65lete\x12\x13.todo.DeleteRequest\x1a\x14.todo.DeleteResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ntodo.proto\x12\x04todo\"!\n\x04Todo\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\"\x1e\n\rCreateRequest\x12\r\n\x05title\x18\x01 \x01(\t\"!\n\x0e\x43reateResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x19\n\x0bReadRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x0cReadResponse\x12\x18\n\x04todo\x18\x01 \x01(\x0b\x32\n.todo.Todo\"*\n\rUpdateRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\"!\n\x0eUpdateResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1b\n\rDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\t\"!\n\x0e\x44\x65leteResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\r\n\x0bListRequest\")\n\x0cListResponse\x12\x19\n\x05todos\x18\x01 \x03(\x0b\x32\n.todo.Todo2\x8a\x02\n\x0bTodoService\x12\x33\n\x06\x43reate\x12\x13.todo.CreateRequest\x1a\x14.todo.CreateResponse\x12-\n\x04Read\x12\x11.todo.ReadRequest\x1a\x12.todo.ReadResponse\x12\x33\n\x06Update\x12\x13.todo.UpdateRequest\x1a\x14.todo.UpdateResponse\x12\x33\n\x06\x44\x65lete\x12\x13.todo.DeleteRequest\x1a\x14.todo.DeleteResponse\x12-\n\x04List\x12\x11.todo.ListRequest\x1a\x12.todo.ListResponseB\x03\x90\x01\x01\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'todo_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _CREATEREQUEST._serialized_start=20
-  _CREATEREQUEST._serialized_end=50
-  _CREATERESPONSE._serialized_start=52
-  _CREATERESPONSE._serialized_end=85
-  _READREQUEST._serialized_start=87
-  _READREQUEST._serialized_end=112
-  _READRESPONSE._serialized_start=114
-  _READRESPONSE._serialized_end=143
-  _UPDATEREQUEST._serialized_start=145
-  _UPDATEREQUEST._serialized_end=187
-  _UPDATERESPONSE._serialized_start=189
-  _UPDATERESPONSE._serialized_end=222
-  _DELETEREQUEST._serialized_start=224
-  _DELETEREQUEST._serialized_end=251
-  _DELETERESPONSE._serialized_start=253
-  _DELETERESPONSE._serialized_end=286
-  _TODOSERVICE._serialized_start=289
-  _TODOSERVICE._serialized_end=516
+  DESCRIPTOR._serialized_options = b'\220\001\001'
+  _TODO._serialized_start=20
+  _TODO._serialized_end=53
+  _CREATEREQUEST._serialized_start=55
+  _CREATEREQUEST._serialized_end=85
+  _CREATERESPONSE._serialized_start=87
+  _CREATERESPONSE._serialized_end=120
+  _READREQUEST._serialized_start=122
+  _READREQUEST._serialized_end=147
+  _READRESPONSE._serialized_start=149
+  _READRESPONSE._serialized_end=189
+  _UPDATEREQUEST._serialized_start=191
+  _UPDATEREQUEST._serialized_end=233
+  _UPDATERESPONSE._serialized_start=235
+  _UPDATERESPONSE._serialized_end=268
+  _DELETEREQUEST._serialized_start=270
+  _DELETEREQUEST._serialized_end=297
+  _DELETERESPONSE._serialized_start=299
+  _DELETERESPONSE._serialized_end=332
+  _LISTREQUEST._serialized_start=334
+  _LISTREQUEST._serialized_end=347
+  _LISTRESPONSE._serialized_start=349
+  _LISTRESPONSE._serialized_end=390
+  _TODOSERVICE._serialized_start=393
+  _TODOSERVICE._serialized_end=659
+_builder.BuildServices(DESCRIPTOR, 'todo_pb2', globals())
 # @@protoc_insertion_point(module_scope)
