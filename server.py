@@ -19,15 +19,15 @@ class TodoService(todo_pb2_grpc.TodoServiceServicer):
         return todo_pb2.CreateResponse(message='Todo created')
 
     def Read(self, request, context):
-        todo_ref = db.collection('todo').document(request.id).get()
-        if todo_ref.exists:
-            todo_dict = todo_ref.to_dict()
-            todo_dict['id'] = todo_ref.id
-            return todo_pb2.ReadResponse(**todo_dict)
-        else:
-            context.set_details('Todo not found')
-            context.set_code(grpc.StatusCode.NOT_FOUND)
-            return todo_pb2.ReadResponse()
+        try:
+            todo_ref = db.collection('todo').document(request.id).get()
+            todo = todo_ref.to_dict()
+            if not todo:
+                context.abort(grpc.StatusCode.NOT_FOUND, "Todo not found")
+            return todo_pb2.ReadResponse(
+                todo=todo_pb2.Todo(id=request.id, title=todo['title']))
+        except Exception as e:
+            context.abort(grpc.StatusCode.INTERNAL, str(e))
 
     def Update(self, request, context):
         todo_ref = db.collection('todo').document(request.id)

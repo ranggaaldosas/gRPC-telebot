@@ -68,15 +68,14 @@ def add(update, context):
 
 def read(update, context):
     id = context.args[0]
-    with grpc.insecure_channel('localhost:50051') as channel:
-        stub = todo_pb2_grpc.TodoServiceStub(channel)
-        try:
+    try:
+        with grpc.insecure_channel('localhost:50051') as channel:
+            stub = todo_pb2_grpc.TodoServiceStub(channel)
             response = stub.Read(todo_pb2.ReadRequest(id=id))
             context.bot.send_message(chat_id=update.effective_chat.id,
-                                     text=response.title)
-        except grpc.RpcError as e:
-            context.bot.send_message(chat_id=update.effective_chat.id,
-                                     text=str(e))
+                                     text=response.todo.title)
+    except grpc.RpcError as e:
+        context.bot.send_message(chat_id=update.effective_chat.id, text=str(e))
 
 
 def update(update, context):
