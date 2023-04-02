@@ -12,9 +12,13 @@ dispatcher = updater.dispatcher
 
 
 def start(update, context):
-    context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text="Halo! Gunakan /add <judul todo> untuk menambahkan todo list")
+    message = "Halo! Gunakan /add <judul todo> untuk menambahkan todo list\n\n"
+    message += "Berikut adalah daftar command yang tersedia:\n"
+    message += "/add <judul todo> - untuk menambahkan todo list\n"
+    message += "/read <id todo> - untuk membaca todo list\n"
+    message += "/update <id todo> <judul baru> - untuk mengubah todo list\n"
+    message += "/delete <id todo> - untuk menghapus todo list"
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
 def add(update, context):
