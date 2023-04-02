@@ -15,8 +15,10 @@ class TodoService(todo_pb2_grpc.TodoServiceServicer):
 
     def Create(self, request, context):
         todo_ref = db.collection('todo').document()
+        todo_id = todo_ref.id
         todo_ref.set({'title': request.title})
-        return todo_pb2.CreateResponse(message='Todo created')
+        return todo_pb2.CreateResponse(message='Todo created with ID: ' +
+                                       todo_id)
 
     def Read(self, request, context):
         todo_ref = db.collection('todo').document(request.id)
